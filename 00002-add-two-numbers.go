@@ -14,10 +14,6 @@ Explanation: 342 + 465 = 807.
 */
 package main
 
-import (
-	"fmt"
-)
-
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -59,11 +55,11 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	l2Length := listLength(l2)
 
 	if l1Length > l2Length {
-		padList(l2, l1Length - l2Length)
+		padList(l2, l1Length-l2Length)
 	}
 
 	if l2Length > l1Length {
-		padList(l1, l2Length - l1Length)
+		padList(l1, l2Length-l1Length)
 	}
 
 	result := n3
@@ -89,116 +85,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 
 	return result
-}
-
-func main() {
-	n1 := ListNode{
-		Val:  2,
-		Next: nil,
-	}
-
-	n2 := ListNode{
-		Val:  4,
-		Next: nil,
-	}
-
-	n3 := ListNode{
-		Val:  3,
-		Next: nil,
-	}
-
-	n4 := ListNode{
-		Val:  5,
-		Next: nil,
-	}
-
-	n5 := ListNode{
-		Val:  6,
-		Next: nil,
-	}
-
-	n6 := ListNode{
-		Val:  4,
-		Next: nil,
-	}
-	n1.Next = &n2
-	n2.Next = &n3
-
-	n4.Next = &n5
-	n5.Next = &n6
-
-	fmt.Println("Initial")
-	for r := addTwoNumbers(&n1, &n4); r != nil; r = r.Next {
-		fmt.Println(r.Val)
-	}
-
-	n7 := ListNode{
-		Val:  5,
-		Next: nil,
-	}
-
-	n8 := ListNode{
-		Val:  5,
-		Next: nil,
-	}
-
-	fmt.Println("Two")
-	for r := addTwoNumbers(&n7, &n8); r != nil; r = r.Next {
-		fmt.Println(r.Val)
-	}
-
-	n9 := ListNode{
-		Val:  1,
-		Next: nil,
-	}
-
-	n10 := ListNode{
-		Val:  8,
-		Next: nil,
-	}
-
-	n11 := ListNode{
-		Val:  0,
-		Next: nil,
-	}
-
-	n9.Next = &n10
-	fmt.Println("Three")
-	for r := addTwoNumbers(&n9, &n11); r != nil; r = r.Next {
-		fmt.Println(r.Val)
-	}
-
-	n12 := ListNode{
-		Val:  1,
-		Next: nil,
-	}
-
-	n13 := ListNode{
-		Val:  8,
-		Next: nil,
-	}
-
-	n14 := ListNode{
-		Val:  3,
-		Next: nil,
-	}
-
-	n15 := ListNode{
-		Val:  7,
-		Next: nil,
-	}
-
-	n16 := ListNode{
-		Val:  1,
-		Next: nil,
-	}
-
-	n12.Next = &n13
-	n13.Next = &n14
-	n15.Next = &n16
-
-	fmt.Println("Four")
-	for r := addTwoNumbers(&n12, &n15); r != nil; r = r.Next {
-		fmt.Println(r.Val)
-	}
 }
