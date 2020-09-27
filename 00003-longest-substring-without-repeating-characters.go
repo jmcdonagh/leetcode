@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 /*
 Given a string s, find the length of the longest substring without repeating characters.
 
@@ -88,6 +84,6 @@ func lengthOfLongestSubstring(s string) int {
 // 	return max
 // }
 
-func main() {
-	fmt.Println(lengthOfLongestSubstring("tmmzuxt"))
-}
+// func main() {
+// 	fmt.Println(lengthOfLongestSubstring("tmmzuxt"))
+// }
