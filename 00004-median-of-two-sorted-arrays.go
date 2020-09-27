@@ -9,6 +9,10 @@ import (
 	"fmt"
 )
 
+// This merges the array then gets the median. Although it is inefficient to do
+// it this way, this it's easy to follow. Alternative form below (which can also
+// be simplified greatly, but shows the general technique that is faster than
+// this.
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	merged := make([]int, len(nums1)+len(nums2), len(nums1)+len(nums2))
 
@@ -55,6 +59,62 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 	return median
 }
+
+// func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+// 	mergedLength := len(nums1) + len(nums2)
+// 	middle := float64(mergedLength) / 2.0 + 0.5
+// 	var median float64
+//
+// 	var x, y, z int
+// 	var prev, cur int
+//
+// 	for float64(z) <= middle {
+// 		switch {
+// 		case float64(z) == middle:
+// 			return float64(cur)
+// 		case x == len(nums1) && y < len(nums2):
+// 			for ; y < len(nums2); y++ {
+// 				prev = cur
+// 				cur = nums2[y]
+// 				z++
+// 				if float64(z) >= middle {
+// 					break
+// 				}
+// 			}
+// 		case y == len(nums2) && x < len(nums1):
+// 			for ; x < len(nums1); x++ {
+// 				prev = cur
+// 				cur = nums1[x]
+// 				z++
+// 				if float64(z) >= middle {
+// 					break
+// 				}
+// 			}
+// 		case nums1[x] < nums2[y]:
+// 			prev = cur
+// 			cur = nums1[x]
+// 			x++
+// 			z++
+// 		case nums2[y] < nums1[x]:
+// 			prev = cur
+// 			cur = nums2[y]
+// 			y++
+// 			z++
+// 		case nums1[x] == nums2[y]:
+// 			prev = cur
+// 			cur = nums1[x]
+// 			x++
+// 			z++
+// 			if float64(z) >= middle {
+// 				break
+// 			}
+// 		}
+// 	}
+//
+// 	sum := prev + cur
+// 	median = float64(sum) / 2.0
+// 	return median
+// }
 
 
 func main() {
