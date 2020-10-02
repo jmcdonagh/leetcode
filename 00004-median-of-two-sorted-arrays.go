@@ -5,10 +5,6 @@ Follow up: The overall run time complexity should be O(log (m+n)).
 */
 package main
 
-import (
-	"fmt"
-)
-
 // This merges the array then gets the median. Although it is inefficient to do
 // it this way, this it's easy to follow. Alternative form below (which can also
 // be simplified greatly, but shows the general technique that is faster than
@@ -117,6 +113,6 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 // }
 
 
-func main() {
-	fmt.Println(findMedianSortedArrays([]int{0,0,0,0,0}, []int{-1,0,0,0,0,0,1}))
-}
+// func main() {
+// 	fmt.Println(findMedianSortedArrays([]int{0,0,0,0,0}, []int{-1,0,0,0,0,0,1}))
+// }
